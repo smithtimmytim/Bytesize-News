@@ -62,3 +62,16 @@ function mytheme_admin_bar_render() {
 }
 // and we hook our function via
 add_action( 'wp_before_admin_bar_render', 'mytheme_admin_bar_render' );
+
+
+// Adding 'Episodes' Post Type to Main Loop
+
+add_filter( 'pre_get_posts', 'my_get_posts' );
+
+function my_get_posts( $query ) {
+
+    if ( is_home() && $query->is_main_query() )
+        $query->set( 'post_type', array( 'episodes' ) );
+
+    return $query;
+}
