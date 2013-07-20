@@ -1,0 +1,25 @@
+.entry {
+	border-bottom: 1px solid $borderColor;
+	margin: 0 0 $spacing-xs;
+	padding: 0 0 $spacing-xs;
+	&:first-child {
+		border-bottom: 0;
+	}
+}
+
+p.pubdate {
+	color: lighten($bodyColor, 45%);
+	font-size: .8em;
+	margin: 0 0 $spacing-xs;
+}
+
+.podPress_content {
+	@extend %clearfix;
+	border-bottom: 10px solid $borderColor !important;
+	margin: 0 0 $spacing-xs !important;
+	padding: 0 0 $spacing-xxs !important;
+}
+
+.podpress_mediafile_title {
+  display: none;
+}

@@ -1,10 +1,24 @@
 
+// Importing Reset
+@import "normalize";
 
+// Importing Bits
+@import "bits";
 
+//Importing Type
+@import "type";
 
+//Importing Media Element Styles
+@import "mediaelement";
 
+// Importing Compass
+@import "compass/css3";
 
+// Importing Page Navigation Styles
+@import "pagenavi";
 
+// Importing Images Styles
+@import "images";
 
 // Global Objects
 
@@ -13,3 +27,59 @@
 	margin: 0 auto;
 	overflow: hidden;
 }
+
+
+body {
+	background: $darkColor;
+}
+
+a {
+	color: lighten($darkColor, 25%);
+	@include transition(all .2s ease-in-out);
+	&:hover {
+		color: $linkColor;
+	}
+}
+
+// Main Content Global
+
+.main-content {
+	.contain {
+		background: white;
+		padding: $spacing-s;
+	}
+}
+
+.content-column {
+	float: left;
+	width: 68.8888889%;
+}
+
+.description {
+	border-bottom: 10px solid $borderColor;
+	margin: 0 0 $spacing-l;
+	padding: 0 0 $spacing-xs;
+	h1 {
+		font-size: 1.8em;
+		font-weight: 800;
+	}
+	p {
+		font-size: 1.3em;
+		margin: 0;
+	}
+}
+
+
+// Importing Header Styles
+@import "header";
+
+// Importing Sidebar Styles
+@import "sidebar";
+
+// Importing Episode Styles
+@import "episodes";
+
+// Importing Footer Styles
+@import "footer";
+
+

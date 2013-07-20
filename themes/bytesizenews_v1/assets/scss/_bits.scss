@@ -1,0 +1,25 @@
+$darkColor: #2e353c;
+$linkColor: #f15300;
+$bodyColor: #383d40;
+$borderColor: #eaebed;
+
+$spacing-xxs: 15px;
+$spacing-xs: 20px;
+$spacing-s: 30px;
+$spacing-m: 40px;
+$spacing-l: 50px;
+$spacing-xl: 60px;
+
+
+// clearfix
+
+%clearfix {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}

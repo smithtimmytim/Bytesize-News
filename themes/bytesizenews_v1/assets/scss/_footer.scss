@@ -1,0 +1,14 @@
+.site__footer {
+	color: white;
+	font-size: .75em;
+	.contain {
+		background: darken($darkColor, 15%);
+		padding: $spacing-xs $spacing-s;
+	}
+	a {
+		color: white;
+		&:hover {
+			color: rgba(white, .7);
+		}
+	}
+}

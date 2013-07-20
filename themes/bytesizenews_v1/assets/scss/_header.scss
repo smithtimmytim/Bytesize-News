@@ -1,0 +1,22 @@
+.site__header {
+	// padding: 2% 0;
+}
+
+.site__nav {
+	background: darken($darkColor, 5%);
+	padding: 2% $spacing-s;
+	li {
+		display: inline-block;
+		font-size: .9em;
+		margin: 0 1.5% 0 0;
+		&:last-child {
+			margin: 0;
+		}
+	}
+	a {
+		color: rgba(white, .3);
+		&:hover {
+			color: rgba(white, .6);
+		}
+	}
+}

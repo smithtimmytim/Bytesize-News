@@ -4,15 +4,47 @@
 	font-family: "jaf-facitweb",sans-serif;
 }
 
+body {
+	color: $bodyColor;
+	@extend %sans;
+	font-size: 110%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 700;
+	margin: 0 0 $spacing-xxs;
+}
+
+ul {
+	li {
+		line-height: 140%;
+	}
+}
+
+p {
+	line-height: 140%;
+}
 
 
-
-
-
-
-
-
-
+.content-column {
+	h2 {
+		font-size: 1.25em;
+	}
+	h3 {
+		font-size: 1.13em;
+		margin-top: $spacing-s;
+	}
+	h4 {
+		font-size: .9em;
+		line-height: 170%;
+		margin-top: $spacing-s;
+	}
+	p {
+		font-size: .9em;
+		line-height: 160%;
+		margin: 0 0 $spacing-xs;
+	}
+}
 
 
 
