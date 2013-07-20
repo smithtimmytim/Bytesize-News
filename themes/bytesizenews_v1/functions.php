@@ -1,5 +1,13 @@
 <?php
 
+// jQuery Insert From Google
+if (!is_admin()) add_action("wp_enqueue_scripts", "my_jquery_enqueue", 11);
+function my_jquery_enqueue() {
+   wp_deregister_script('jquery');
+   wp_register_script('jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js", false, null);
+   wp_enqueue_script('jquery');
+}
+
 // Media Element Js
 wp_register_script( 'mediaelement-js', get_template_directory_uri() . '/assets/js/mediaelement-and-player.min.js');
 wp_enqueue_script( 'mediaelement-js', 'true', 'true', 'true', 'true');
@@ -8,7 +16,12 @@ wp_enqueue_script( 'mediaelement-js', 'true', 'true', 'true', 'true');
 wp_register_script( 'time-jump', get_template_directory_uri() . '/assets/js/timeJump.js');
 wp_enqueue_script( 'time-jump', 'true', 'true', 'true', 'true' );
 
-// Off Air Post Type
+//Stuff
+wp_register_script( 'global-stuff', get_template_directory_uri() . '/assets/js/stuff-ck.js');
+wp_enqueue_script( 'global-stuff', 'true', 'true', 'true', 'true' );
+
+
+// Episodes Post Type
 add_action( 'init', 'create_post_type');
 function create_post_type() {
   register_post_type( 'episodes',
@@ -45,6 +58,12 @@ function create_post_type() {
     'taxonomies' => array( 'category' ),
     )
   );
+}
+
+// Adding Markdown support to case studies
+add_action( 'init', 'ts_add_markdown_support' );
+function ts_add_markdown_support(){
+    add_post_type_support( 'episodes', 'markdown-osi' );
 }
 
 // Messing with WP Admin Bar
