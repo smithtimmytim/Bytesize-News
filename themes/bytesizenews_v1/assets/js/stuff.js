@@ -10,3 +10,19 @@ $('a').each(function() {
 });
 
 $('audio').mediaelementplayer();
+
+
+// Something happens
+  $(".open-newsletter").on("click", function() {
+
+    // State changes
+    $(".newsletter__wrapper").toggleClass("newsletterIsOpen");
+
+  });
+
+  $(".close-newsletter").on("click", function() {
+
+		// State changes
+		$(".newsletter__wrapper").removeClass("newsletterIsOpen");
+
+	});

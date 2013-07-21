@@ -1,10 +1,15 @@
 .site__header {
 	// padding: 2% 0;
+	.contain {
+		position: relative;
+	}
 }
 
 .site__nav {
 	background: darken($darkColor, 5%);
 	padding: 2% $spacing-s;
+	position: relative;
+	z-index: 1000;
 	li {
 		display: inline-block;
 		font-size: .9em;
@@ -17,6 +22,109 @@
 		color: rgba(white, .3);
 		&:hover {
 			color: rgba(white, .6);
+		}
+	}
+}
+
+.open-newsletter {
+	position: absolute;
+	top: 20px;
+	right: $spacing-s;
+	z-index: 1001;
+	@extend %clearfix;
+	a {
+		background: lighten($darkColor, 25%);
+		border-radius: 3px;
+		color: white;
+		padding: 3px 6px;
+		font-size: .85em;
+		&:hover {
+			background: $linkColor;
+		}
+	}
+}
+
+.newsletter__wrapper {
+	position: relative;
+	pointer-events: none;
+	margin-top: -81px;
+	@include transition(all .2s ease-in-out);
+	@extend %clearfix;
+	.contain {
+		background: $borderColor;
+		padding: $spacing-xs $spacing-s;
+		position: relative;
+	}
+}
+
+.newsletterIsOpen {
+	height: 100%;
+	margin-top: 0;
+
+  /* Clickable */
+  pointer-events: auto;
+  @include transition(all .2s ease-in-out);
+}
+
+.newsletter {
+	input {
+		border-radius: 3px;
+		float: left;
+		font-size: .85em;
+		margin: 0 $spacing-xxs 0 0;
+		padding: 10px 12px;
+		width: 30%;
+	}
+	input[type="submit"] {
+		background: lighten($darkColor, 25%);
+		color: white;
+		@include transition(all .2s ease-in-out);
+		width: 20%;
+		&:hover {
+			background: $linkColor;
+		}
+	}
+}
+
+input:focus::-webkit-input-placeholder {
+	color: lighten($bodyColor, 65%);
+}
+
+::-webkit-input-placeholder {
+   color: lighten($bodyColor, 50%);
+   @include transition(all .2s ease-in-out);
+}
+
+input:focus:-moz-placeholder {
+	color: lighten($bodyColor, 65%);
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: lighten($bodyColor, 50%);
+   @include transition(all .2s ease-in-out);  
+}
+
+input:focus::-moz-placeholder {
+	color: lighten($bodyColor, 65%);
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: lighten($bodyColor, 50%);
+   @include transition(all .2s ease-in-out);  
+}
+
+.close-newsletter {
+	position: absolute;
+	top: 30px;
+	right: $spacing-s;
+	a {
+		background: lighten($darkColor, 25%);
+		border-radius: 3px;
+		color: white;
+		padding: 3px 6px;
+		font-size: .85em;
+		&:hover {
+			background: $linkColor;
 		}
 	}
 }
