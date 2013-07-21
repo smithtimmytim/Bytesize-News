@@ -25,11 +25,18 @@
 	}
 }
 
-.useful-links {
+.sidebar__module {
 	border-bottom: 1px solid darken($borderColor, 5%);
-	list-style-type: none;
 	margin: 0 0 $spacing-s;
 	padding: 0 0 $spacing-xs;
+	&:last-child {
+		border-bottom: 0;
+		padding: 0;
+	}
+}
+
+.useful-links {
+	list-style-type: none;
 	li {
 		font-size: .78em;
 		margin: 0 0 3.5%;
@@ -37,12 +44,6 @@
 			margin: 0;
 		}
 	}
-}
-
-.hosted-by {
-	border-bottom: 1px solid darken($borderColor, 5%);
-	margin: 0 0 $spacing-s;
-	padding: 0 0 $spacing-xs;
 }
 
 .host {
@@ -53,6 +54,4 @@
 
 .sharing-links {
 	@extend .useful-links;
-	border-bottom: none;
-	padding: 0;
 }
