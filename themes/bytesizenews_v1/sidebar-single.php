@@ -6,10 +6,19 @@
 
 		<div class="sidebar__module">
 			<ul class="useful-links">
-				<li><a href="#">Subscribe via iTunes</a></li>
-				<li><a href="#">Subscribe via RSS</a></li>
-				<li><a href="/sponsor">Sponsor Bytesize</a></li>
-			</ul>
+				<li><a href="#">
+					<span data-icon="i" aria-hidden="true"></span>
+					<span>Subscribe via iTunes</span>
+				</a></li>
+				<li><a href="#">
+					<span data-icon="r" aria-hidden="true"></span>
+					<span>Subscribe via RSS</span>	
+				</a></li>
+				<li><a href="/sponsorship">
+					<span data-icon="h" aria-hidden="true"></span>
+					<span>Sponsor Bytesize</span>
+				</a></li>
+			</ul><!-- .useful-links -->
 		</div><!-- .sidebar__module -->
 
 		<div class="hosted-by sidebar__module">

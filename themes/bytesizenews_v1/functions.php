@@ -94,3 +94,100 @@ function my_get_posts( $query ) {
 
     return $query;
 }
+
+/**
+ *  Install Add-ons
+ *  
+ *  The following code will include all 4 premium Add-Ons in your theme.
+ *  Please do not attempt to include a file which does not exist. This will produce an error.
+ *  
+ *  All fields must be included during the 'acf/register_fields' action.
+ *  Other types of Add-ons (like the options page) can be included outside of this action.
+ *  
+ *  The following code assumes you have a folder 'add-ons' inside your theme.
+ *
+ *  IMPORTANT
+ *  Add-ons may be included in a premium theme as outlined in the terms and conditions.
+ *  However, they are NOT to be included in a premium / free plugin.
+ *  For more information, please read http://www.advancedcustomfields.com/terms-conditions/
+ */ 
+
+// Fields 
+add_action('acf/register_fields', 'my_register_fields');
+
+function my_register_fields()
+{
+    //include_once('add-ons/acf-repeater/repeater.php');
+    //include_once('add-ons/acf-gallery/gallery.php');
+    //include_once('add-ons/acf-flexible-content/flexible-content.php');
+}
+
+// Options Page 
+//include_once( 'add-ons/acf-options-page/acf-options-page.php' );
+
+
+/**
+ *  Register Field Groups
+ *
+ *  The register_field_group function accepts 1 array which holds the relevant data to register a field group
+ *  You may edit the array as you see fit. However, this may result in errors if the array is not compatible with ACF
+ */
+
+if(function_exists("register_field_group"))
+{
+    register_field_group(array (
+        'id' => 'acf_episode-stuff',
+        'title' => 'Episode Stuff',
+        'fields' => array (
+            array (
+                'key' => 'field_51e9f7a0905b9',
+                'label' => 'Episode Number',
+                'name' => 'episode_number',
+                'type' => 'number',
+                'default_value' => '',
+                'min' => 1,
+                'max' => '',
+                'step' => '',
+            ),
+            array (
+                'key' => 'field_51ea2c8f059b4',
+                'label' => 'Episode Length',
+                'name' => 'episode_length',
+                'type' => 'number',
+                'required' => 1,
+                'default_value' => '',
+                'min' => 1,
+                'max' => 60,
+                'step' => '',
+            ),
+        ),
+        'location' => array (
+            array (
+                array (
+                    'param' => 'post_type',
+                    'operator' => '==',
+                    'value' => 'episodes',
+                    'order_no' => 0,
+                    'group_no' => 0,
+                ),
+            ),
+        ),
+        'options' => array (
+            'position' => 'normal',
+            'layout' => 'default',
+            'hide_on_screen' => array (
+                0 => 'custom_fields',
+                1 => 'discussion',
+                2 => 'comments',
+                3 => 'revisions',
+                4 => 'slug',
+                5 => 'author',
+                6 => 'format',
+                7 => 'featured_image',
+                8 => 'tags',
+                9 => 'send-trackbacks',
+            ),
+        ),
+        'menu_order' => 0,
+    ));
+}

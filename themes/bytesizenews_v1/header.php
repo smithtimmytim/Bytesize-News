@@ -47,8 +47,8 @@
       <nav class="site__nav" role="navigation">
         <ul>
           <li><a href="/">Episodes</a></li>
-          <li><a href="#">Sponsorship</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="/sponsorship">Sponsorship</a></li>
+          <li><a href="/contact">Contact</a></li>
         </ul>
       </nav>
       <div class="open-newsletter">

@@ -15,10 +15,6 @@
 				</article>
 
 			<?php endwhile; endif; ?>
-
-			<div class="page__navigation">
-				<?php wp_pagenavi(); ?>
-			</div>
 		</section><!-- .content-column -->
 	</div><!-- .contain -->
 </main>

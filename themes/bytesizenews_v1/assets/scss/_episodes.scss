@@ -2,7 +2,7 @@
 	border-bottom: 1px solid $borderColor;
 	margin: 0 0 $spacing-xs;
 	padding: 0 0 $spacing-xs;
-	&:first-child {
+	&:last-child {
 		border-bottom: 0;
 	}
 }
