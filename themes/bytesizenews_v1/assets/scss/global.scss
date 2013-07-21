@@ -23,9 +23,15 @@
 // Global Objects
 
 .contain {
-	max-width: 960px;
+	width: 960px;
 	margin: 0 auto;
 	overflow: hidden;
+}
+
+.screen-reader-text {
+	position: absolute;
+	top: -9999px;
+	left: -9999px;
 }
 
 
