@@ -41,6 +41,9 @@
 	margin: $spacing-l 0;
 }
 
+.inactive {
+	color: lighten($bodyColor, 50%);
+}
 
 body {
 	background: $darkColor;
