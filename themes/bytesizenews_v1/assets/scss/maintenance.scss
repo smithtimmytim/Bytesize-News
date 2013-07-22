@@ -1,0 +1,126 @@
+// Importing Reset
+@import "normalize";
+
+// Importing Bits
+@import "bits";
+
+//Importing Type
+@import "type";
+
+// Importing Compass
+@import "compass/css3";
+
+// Importing Images Styles
+@import "images";
+
+// Importing Form Styles
+@import "forms";
+
+// Reusable Classes
+
+.wrapper {
+	background: white;
+	max-width: 500px;
+	margin: 60px auto 0;
+	padding: $spacing-s;
+	overflow: hidden;
+}
+
+.screen-reader-text {
+	position: absolute;
+	top: -9999px;
+	left: -9999px;
+}
+
+//Body Stuff 
+
+body {
+	background: $darkColor;
+}
+
+
+// Header 
+
+header {
+	background: $darkColor;
+	margin: 0 0 $spacing-s;
+}
+
+// Main Content
+
+main {
+	display: block;
+	@extend %clearfix;
+}
+
+.main-content {
+	margin: 0 0 $spacing-s;
+	p {
+		font-size: 1em;
+		line-height: 160%;
+		margin: 0 0 $spacing-s;
+	}
+}
+
+// Newsletter
+
+.newsletter {
+	background: $borderColor;
+	padding: $spacing-xxs;
+	border-radius: 3px;
+	input {
+		background: white;
+		border-radius: 3px;
+		font-size: .9em;
+		margin: 0 0 $spacing-xxs;
+		padding: 12px 10px;
+		width: 100%;
+		&:last-child {
+			margin: 0;
+		}
+	}
+	input[type="submit"] {
+		background: lighten($darkColor, 25%);
+		color: white;
+		@include transition(all .2s ease-in-out);
+		&:hover {
+			background: $linkColor;
+		}
+	}
+}
+
+input:focus::-webkit-input-placeholder {
+	color: lighten($bodyColor, 65%);
+}
+
+::-webkit-input-placeholder {
+   color: lighten($bodyColor, 50%);
+   @include transition(all .2s ease-in-out);
+}
+
+input:focus:-moz-placeholder {
+	color: lighten($bodyColor, 65%);
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: lighten($bodyColor, 50%);
+   @include transition(all .2s ease-in-out);  
+}
+
+input:focus::-moz-placeholder {
+	color: lighten($bodyColor, 65%);
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: lighten($bodyColor, 50%);
+   @include transition(all .2s ease-in-out);  
+}
+
+// Footer
+
+footer {
+	small {
+		color: lighten($bodyColor, 40%);
+		font-size: .8em;
+	}
+}

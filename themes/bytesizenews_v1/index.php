@@ -9,7 +9,7 @@
 		<section class="content-column">
 			<div class="description">
 				<h1>Bytesize</h1>
-				<p>A weekly news update focused on the tech, design and development industries. It's the news you need to know. Unbiased, and to the point.</p>
+				<p>A weekly news update focused on the tech, design and development industries. It's the news you need to know.</p>
 			</div>
 			
 			<div class="posts">
