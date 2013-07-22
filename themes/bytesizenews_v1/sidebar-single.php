@@ -10,7 +10,7 @@
 					<span data-icon="i" aria-hidden="true"></span>
 					<span>Subscribe via iTunes</span>
 				</a></li>
-				<li><a href="#">
+				<li><a href="/feed/bytesize/">
 					<span data-icon="r" aria-hidden="true"></span>
 					<span>Subscribe via RSS</span>	
 				</a></li>
