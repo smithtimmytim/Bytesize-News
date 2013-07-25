@@ -5,10 +5,10 @@
 	<div class="show__meta">
 		<div class="sidebar__module">
 			<ul class="useful-links">
-				<li><a href="#">
+				<!-- <li><a href="#">
 					<span data-icon="i" aria-hidden="true"></span>
 					<span>Subscribe via iTunes</span>
-				</a></li>
+				</a></li> -->
 				<li><a href="/feed/bytesize/">
 					<span data-icon="r" aria-hidden="true"></span>
 					<span>Subscribe via RSS</span>	

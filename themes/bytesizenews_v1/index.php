@@ -21,7 +21,15 @@
 						<?php the_excerpt(); ?>
 					</article>
 
-				<?php endwhile; endif; ?>
+				<?php endwhile; ?>
+				<?php else : ?>
+
+					<article class="entry">
+						<p>We’re getting things ready and taking off the bubble wrap. Stay tuned, an episode will be live soon!</p>
+					</article>	
+
+				<?php endif; ?>
+
 			</div><!-- .posts -->
 
 			<div class="page__navigation">
