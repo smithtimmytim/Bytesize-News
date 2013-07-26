@@ -1,6 +1,6 @@
 <aside class="sidebar" role="complementary">
 	<figure class="artwork">
-		<img src="<?php bloginfo('template_url'); ?>/assets/img/bytesize-artwork_500.png" alt="Bytesize Artwork">
+		<a href="/"><img src="<?php bloginfo('template_url'); ?>/assets/img/bytesize-artwork_500.png" alt="Bytesize Artwork"></a>
 	</figure>
 	<div class="show__meta">
 
