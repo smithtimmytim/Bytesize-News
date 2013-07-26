@@ -2,3 +2,18 @@ img {
 	width: 100%;
 	height: auto;
 }
+
+/*
+
+SIDEBAR HOST AND PRODUCER IMAGE
+----------------------------------------------------------- */
+
+.host {
+	max-width: 50px;
+	float: left;
+	margin: 0 $spacing-xxs 0 0;
+}
+
+.producer {
+	@extend .host;
+}

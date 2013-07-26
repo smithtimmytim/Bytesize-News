@@ -47,12 +47,6 @@
 	}
 }
 
-.host {
-	max-width: 50px;
-	float: left;
-	margin: 0 $spacing-xxs 0 0;
-}
-
 .sharing-links {
 	@extend .useful-links;
 }

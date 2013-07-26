@@ -31,6 +31,16 @@
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></p>
 		</div><!-- .hosted-by -->
 
+		<div class="produced-by sidebar__module">
+			<h4>Produced By</h4>
+			<figure class="producer">
+				<img src="<?php bloginfo('template_url'); ?>/assets/img/peter_100.png" alt="Tim Smith">
+			</figure>
+			<p><a href="http://peterbinks.net/">Peter Binkowski</a></p>
+			<p><a href="https://twitter.com/peterbinks" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @peterbinks</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></p>
+		</div><!-- .produced-by -->
+
 		<div class="episode-nav__wrapper sidebar__module">
 			<h4>Episode Navigation</h4>
 			<nav class="episode__nav">
