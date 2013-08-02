@@ -101,7 +101,7 @@ function bytesize_titlerss ($content) {
   global $wp_query;
   $episodeNumber = get_field('episode_number');
   if(is_feed()) {
-    $content = "Bytesize #".$episodeNumber.": ".$content;
+    $content = "#".$episodeNumber.": Week of ".$content;
   }
   return $content;
 }
