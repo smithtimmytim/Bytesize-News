@@ -95,6 +95,18 @@ function my_get_posts( $query ) {
     return $query;
 }
 
+// Adding Episode Number to Title
+
+function bytesize_titlerss ($content) {
+  global $wp_query;
+  $episodeNumber = get_field('episode_number');
+  if(is_feed()) {
+    $content = "Bytesize #".$episodeNumber.": ".$content;
+  }
+  return $content;
+}
+add_filter('the_title_rss', 'bytesize_titlerss');
+
 /**
  *  Install Add-ons
  *  
