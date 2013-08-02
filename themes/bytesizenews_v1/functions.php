@@ -95,6 +95,25 @@ function my_get_posts( $query ) {
     return $query;
 }
 
+// Adding Sponsors to Feed
+
+function bytesize_postrss($content) {
+  global $wp_query;
+  $sponsorPretext = "<h4>This week’s Bytesize is brought to you by:</h4>";
+  $episodeSponsor = get_field('episode_sponsor');
+  $excerpt = get_field('episode_lead');
+    if(is_feed()) {
+      if($episodeSponsor !== '') {
+        $content = "<p>".$excerpt."</p>".$content.$sponsorPretext.$episodeSponsor;
+      }
+      else {
+        $content = "<p>".$excerpt."</p>".$content;
+      }
+    }
+return $content;
+}
+add_filter('the_content', 'bytesize_postrss');
+
 // Adding Episode Number to Title
 
 function bytesize_titlerss ($content) {
@@ -121,22 +140,6 @@ global $menu;
 }
 add_action('admin_menu', 'remove_menus');
 
-/**
- *  Install Add-ons
- *  
- *  The following code will include all 4 premium Add-Ons in your theme.
- *  Please do not attempt to include a file which does not exist. This will produce an error.
- *  
- *  All fields must be included during the 'acf/register_fields' action.
- *  Other types of Add-ons (like the options page) can be included outside of this action.
- *  
- *  The following code assumes you have a folder 'add-ons' inside your theme.
- *
- *  IMPORTANT
- *  Add-ons may be included in a premium theme as outlined in the terms and conditions.
- *  However, they are NOT to be included in a premium / free plugin.
- *  For more information, please read http://www.advancedcustomfields.com/terms-conditions/
- */ 
 
 // Fields 
 add_action('acf/register_fields', 'my_register_fields');
@@ -165,6 +168,22 @@ if(function_exists("register_field_group"))
         'id' => 'acf_episode-stuff',
         'title' => 'Episode Stuff',
         'fields' => array (
+            array (
+              'key' => 'field_51f5fdc23d3f2',
+              'label' => 'Episode Lead',
+              'name' => 'episode_lead',
+              'type' => 'textarea',
+              'default_value' => '',
+              'formatting' => 'none',
+            ),
+            array (
+              'key' => 'field_51f5b29c79627',
+              'label' => 'Episode Sponsor',
+              'name' => 'episode_sponsor',
+              'type' => 'textarea',
+              'default_value' => '',
+              'formatting' => 'html',
+            ),
             array (
                 'key' => 'field_51e9f7a0905b9',
                 'label' => 'Episode Number',
