@@ -2,10 +2,10 @@
 <html lang="en">
 
 <head>
-  
-  <!-- 
 
-  @@@@@@@@@@@@@@@@@  @@@   @@@          @@@ 
+  <!--
+
+  @@@@@@@@@@@@@@@@@  @@@   @@@          @@@
   @@@@@@@@@@@@@@@@@  @@@   @@@@        @@@@
          @@@         @@@   @@@ @      @ @@@
          @@@         @@@   @@@  @@  @@  @@@
@@ -27,7 +27,7 @@
 
   <link rel="alternate" type="application/rss+xml" href="<?php bloginfo('rss2_url'); ?>" />
 
-  
+
   <!-- My styles -->
   <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/assets/css/global.css"/>
 
@@ -39,13 +39,13 @@
   <!--WP Generated Header -->
   <?php wp_head(); ?>
   <!--End WP Generated Header -->
-  
+
 </head>
 <body <?php body_class($class); ?>>
-  
 
-  <header class="site__header" role="banner"> 
-    <div class="contain"> 
+
+  <header class="site__header" role="banner">
+    <div class="contain">
       <nav class="site__nav" role="navigation">
         <ul>
           <li><a href="/">Episodes</a></li>
@@ -82,29 +82,3 @@
       </div>
     </div>
   </section><!-- .newsletter -->
-
-  <script type="text/javascript">
-      $(function () {
-          $('#subForm').submit(function (e) {
-              e.preventDefault();
-              $.getJSON(
-              this.action + "?callback=?",
-              $(this).serialize(),
-              function (data) {
-                  if (data.Status === 400) {
-                      alert("Error: " + data.Message);
-                  } else { // 200
-                      alert("Success: " + data.Message);
-                  }
-              });
-          });
-      });
-
-      $('#subForm').submit(function() {
-
-        // State changes
-        $(".newsletter__wrapper").removeClass("newsletterIsOpen");
-
-      });
-
-  </script>

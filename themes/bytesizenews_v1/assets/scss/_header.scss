@@ -87,6 +87,9 @@
 			background: $linkColor;
 		}
 	}
+	p {
+		margin: 10px 0 0;
+	}
 }
 
 input:focus::-webkit-input-placeholder {
@@ -104,7 +107,7 @@ input:focus:-moz-placeholder {
 
 :-moz-placeholder { /* Firefox 18- */
    color: lighten($bodyColor, 50%);
-   @include transition(all .2s ease-in-out);  
+   @include transition(all .2s ease-in-out);
 }
 
 input:focus::-moz-placeholder {
@@ -113,7 +116,7 @@ input:focus::-moz-placeholder {
 
 ::-moz-placeholder {  /* Firefox 19+ */
    color: lighten($bodyColor, 50%);
-   @include transition(all .2s ease-in-out);  
+   @include transition(all .2s ease-in-out);
 }
 
 .close-newsletter {
