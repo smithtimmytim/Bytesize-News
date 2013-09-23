@@ -59,11 +59,8 @@
 		<div class="sharing-is-caring sidebar__module">
 			<h4>Share</h4>
 			<ul class="sharing-links">
-				<li><a href="http://twitter.com/home?status=Bytesize <?php the_field('episode_number');?>: <?php the_title(); ?> - <?php the_permalink(); ?> (via @ttimsmith)" title="Share on Twitter" target="_blank">Share on Twitter</a></li>
+				<li><a href="http://twitter.com/home?status=Bytesize <?php the_field('episode_number');?> with @kyleroderick: <?php the_title(); ?> - <?php the_permalink(); ?>" title="Share on Twitter" target="_blank">Share on Twitter</a></li>
 				<li><a href="http://www.facebook.com/sharer.php?u=<?php the_permalink();?>&t=<?php the_title(); ?>" title="Share on Facebook" target="blank">Share on Facebook</a></li>
-				<?php if ( is_user_logged_in() ) : ?>
-				<li><a href="http://twitter.com/home?status=Just posted: Bytesize <?php the_field('episode_number');?> with @ttimsmith - <?php the_permalink(); ?>" title="Share on Twitter" target="_blank">Admin Tweet</a></li>
-				<?php endif; ?>
 			</ul>
 		</div>
 
