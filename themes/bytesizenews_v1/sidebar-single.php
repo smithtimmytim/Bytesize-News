@@ -12,7 +12,7 @@
 				</a></li>
 				<li><a href="/feed/bytesize/">
 					<span data-icon="r" aria-hidden="true"></span>
-					<span>Subscribe via RSS</span>	
+					<span>Subscribe via RSS</span>
 				</a></li>
 				<li><a href="/sponsorship">
 					<span data-icon="h" aria-hidden="true"></span>
@@ -24,10 +24,10 @@
 		<div class="hosted-by sidebar__module">
 			<h4>Hosted By</h4>
 			<figure class="host">
-				<img src="<?php bloginfo('template_url'); ?>/assets/img/tim_100.png" alt="Tim Smith">
+				<img src="<?php bloginfo('template_url'); ?>/assets/img/kyle_100.png" alt="Kyle Roderick">
 			</figure>
-			<p><a href="http://ttimsmith.com">Tim Smith</a></p>
-			<p><a href="https://twitter.com/ttimsmith" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @ttimsmith</a>
+			<p><a href="http://www.kyleroderick.com/">Kyle Roderick</a></p>
+			<p><a href="https://twitter.com/kyleroderick" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @kyleroderick</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></p>
 		</div><!-- .hosted-by -->
 
@@ -45,17 +45,17 @@
 			<h4>Episode Navigation</h4>
 			<nav class="episode__nav">
 				<p><?php previous_post_link('%link', 'Previous', TRUE); ?>
-				<?php if(!get_adjacent_post(true, '', true)) { 
-				  echo '<span class="inactive">Previous</span>'; 
+				<?php if(!get_adjacent_post(true, '', true)) {
+				  echo '<span class="inactive">Previous</span>';
 				} ?>
 				&middot;
 				<?php next_post_link('%link', 'Next', TRUE); ?>
-				<?php if(!get_adjacent_post(true, '', false)) { 
-				  echo '<span class="inactive">Next</span>'; 
+				<?php if(!get_adjacent_post(true, '', false)) {
+				  echo '<span class="inactive">Next</span>';
 				} ?></p>
 			</nav>
 		</div>
-		
+
 		<div class="sharing-is-caring sidebar__module">
 			<h4>Share</h4>
 			<ul class="sharing-links">
