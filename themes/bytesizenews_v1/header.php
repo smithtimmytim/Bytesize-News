@@ -23,7 +23,7 @@
 
   <meta charset="utf-8" />
   <title><?php is_home() ? bloginfo('description') : wp_title(''); ?></title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width" />
 
   <link rel="alternate" type="application/rss+xml" href="<?php bloginfo('rss2_url'); ?>" />
 
