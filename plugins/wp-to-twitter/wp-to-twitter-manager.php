@@ -448,7 +448,17 @@ function wpt_update_settings() {
 <h2><?php _e("WP to Twitter Options", 'wp-to-twitter'); ?></h2>
 <div id="wpt_settings_page" class="postbox-container" style="width: 70%">
 
-<?php $wp_to_twitter_directory = get_bloginfo( 'wpurl' ) . '/' . WP_PLUGIN_DIR . '/' . dirname( plugin_basename(__FILE__) ); ?>
+<?php 
+	if ( isset($_GET['debug']) && $_GET['debug'] == 'true' ) {
+		$debug = get_option( 'wpt_debug' );
+		echo "<pre>";
+			print_r( $debug );
+		echo "</pre>";
+	}
+	if ( isset($_GET['debug']) && $_GET['debug'] == 'delete' ) {
+		delete_option( 'wpt_debug' );
+	}
+	$wp_to_twitter_directory = get_bloginfo( 'wpurl' ) . '/' . WP_PLUGIN_DIR . '/' . dirname( plugin_basename(__FILE__) ); ?>
 		
 <div class="metabox-holder">
 
@@ -600,24 +610,9 @@ function wpt_update_settings() {
 				<input type="checkbox" name="jd_tweet_default" id="jd_tweet_default" value="1" <?php echo jd_checkCheckbox('jd_tweet_default')?> />
 				<label for="jd_tweet_default"><?php _e("Do not post Tweets by default", 'wp-to-twitter'); ?></label><br />
 				<input type="checkbox" name="jd_tweet_default_edit" id="jd_tweet_default_edit" value="1" <?php echo jd_checkCheckbox('jd_tweet_default_edit')?> />
-				<label for="jd_tweet_default_edit"><?php _e("Do not post Tweets by default (editing only)", 'wp-to-twitter'); ?></label><br />				
-			</p>
-			<p>
+				<label for="jd_tweet_default_edit"><?php _e("Do not post Tweets by default (editing only)", 'wp-to-twitter'); ?></label><br />
 				<input type="checkbox" name="wpt_inline_edits" id="wpt_inline_edits" value="1" <?php echo jd_checkCheckbox('wpt_inline_edits')?> />
 				<label for="wpt_inline_edits"><?php _e("Allow status updates from Quick Edit", 'wp-to-twitter'); ?></label><br />
-
-			</p>
-			<?php if ( function_exists( 'wpt_pro_exists') && wpt_pro_exists() == true && get_option( 'wpt_delay_tweets' ) > 0 ) {
-				$r_disabled = " disabled='disabled'"; 
-				$r_message = "<em>".__('Delaying tweets with WP Tweets PRO moves Tweeting to an publishing-independent action.','wp-to-twitter' )."</em>"; 
-			} else { 
-				$r_disabled = ''; 
-				$r_message = '';
-			} ?>
-			<p>
-				<input type="checkbox"<?php echo $r_disabled; ?> name="jd_twit_remote" id="jd_twit_remote" value="1" <?php echo jd_checkCheckbox('jd_twit_remote')?> />
-				<label for="jd_twit_remote"><?php _e("Send Twitter Updates on remote publication (Post by Email or XMLRPC Client)", 'wp-to-twitter'); ?></label><br />
-				<?php echo $r_message; ?>
 			</p>
 		</fieldset>
 		<fieldset>
@@ -766,7 +761,7 @@ function wpt_sidebar() {
 			<a href="<?php echo $support; ?>#get-support"><?php _e("Get Support",'wp-to-twitter'); ?></a>
 			<?php if ( get_option('jd_donations') != 1 && !function_exists( 'wpt_pro_exists' )  ) { ?>
 			<div>
-			<p><?php _e('<a href="http://www.joedolson.com/donate.php">Make a donation today!</a> Every donation counts - donate $2, $10, or $100 and help me keep this plug-in running!','wp-to-twitter'); ?></p>
+			<p><?php _e('<a href="http://www.joedolson.com/donate.php">Make a donation today!</a> Every donation counts - donate $5, $20, or $100 and help me keep this plug-in running!','wp-to-twitter'); ?></p>
 			<p class='flattr'><a href="http://flattr.com/thing/559528/WP-to-Twitter"><img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr WP to Twitter" /></a></p>			
 			<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
 				<div>
@@ -798,7 +793,12 @@ function wpt_sidebar() {
 			</div>
 		</div>
 	</div>
-	<?php } ?>
+	<?php 
+	} else { 
+		if ( function_exists( 'wpt_notes' ) ) { 
+			wpt_notes(); 
+		}
+	} ?>
 	<div class="ui-sortable meta-box-sortables">
 		<div class="postbox">
 		<h3><?php _e('Shortcodes','wp-to-twitter'); ?></h3>
