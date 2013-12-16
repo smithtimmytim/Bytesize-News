@@ -12,20 +12,6 @@ $('a').each(function() {
 $('audio').mediaelementplayer();
 
 
-// Something happens
-  $(".open-newsletter").on("click", function() {
-
-    // State changes
-    $(".newsletter__wrapper").toggleClass("newsletterIsOpen");
-
-  });
-
-  $(".close-newsletter").on("click", function() {
-
-		// State changes
-		$(".newsletter__wrapper").removeClass("newsletterIsOpen");
-
-	});
 
 
 $(function () {
@@ -38,7 +24,7 @@ $(function () {
             if (data.Status === 400) {
                 alert("Error: " + data.Message);
             } else { // 200
-                $("form").remove("#subForm");
+                $("form").remove("#subForm", "h4");
                 $(".newsletter").append("<p>Thanks for subscribing. You’ll be receiving a confirmation email.</p>");
             }
         });

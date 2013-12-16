@@ -49,24 +49,12 @@
 
 .newsletter__wrapper {
 	position: relative;
-	pointer-events: none;
-	margin-top: -81px;
-	@include transition(all .2s ease-in-out);
 	@extend %clearfix;
 	.contain {
 		background: $borderColor;
 		padding: $spacing-xs $spacing-s;
 		position: relative;
 	}
-}
-
-.newsletterIsOpen {
-	height: 100%;
-	margin-top: 0;
-
-  /* Clickable */
-  pointer-events: auto;
-  @include transition(all .2s ease-in-out);
 }
 
 .newsletter {
@@ -89,6 +77,18 @@
 	}
 	p {
 		margin: 10px 0 0;
+		&:only-child {
+			margin: 0;
+			font-size: .9em;
+		}
+	}
+	h4 {
+		small {
+			color: lighten($darkColor, 45%);
+			font-size: .6em;
+			font-weight: normal;
+			margin-left: 8px;
+		}
 	}
 }
 
