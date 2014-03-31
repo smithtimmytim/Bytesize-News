@@ -1,4 +1,5 @@
-themes/bytesizenews_v1/.sass-cache/
+/themes/bytesizenews_v1/.sass-cache/
+/themes/bytesizenews_v2/.sass-cache/
 
 /bytesizenews.sublime-project
 /bytesizenews.sublime-workspace
@@ -8,3 +9,4 @@ themes/bytesizenews_v1/.sass-cache/
 /index.php
 /uploads/
 /upgrade/
+
